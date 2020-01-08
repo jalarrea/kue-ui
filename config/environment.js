@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'kue-ui-client',
+    modulePrefix: 'kue-ui-client-mod',
     environment,
     rootURL: '/',
     locationType: 'auto',

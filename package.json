@@ -1,9 +1,9 @@
 {
   "name": "kue-ui-client-mod",
-  "version": "1.2.1-1",
-  "description": "Small description for client goes here",
+  "version": "1.0.1",
+  "description": "This a fork of kue-ui-client by <chris@stonecircle.io>",
   "license": "MIT",
-  "author": "Chris Manson <chris@stonecircle.io>",
+  "author": "Leonardo Larrea <leonardo.larrea1@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
