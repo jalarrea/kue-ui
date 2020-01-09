@@ -37,7 +37,7 @@ export default Component.extend({
       let numberOfJobs = 0;
       let promises = this.selectedJobs.map((job) => {
         numberOfJobs ++;
-          this.jobs.clone(job.id)
+          this.jobs.clone(job)
       });
       Promise.all(promises).then(() => {
         this.notifications.success(`${numberOfJobs} Jobs cloned`, {
