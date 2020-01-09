@@ -33,5 +33,19 @@ export default Component.extend({
         later(this, () => this.refresh(), 300);
       });
     },
+    cloneSelected(){
+      let numberOfJobs = 0;
+      let promises = this.selectedJobs.map((job) => {
+        numberOfJobs ++;
+          this.jobs.clone(job.id)
+      });
+      Promise.all(promises).then(() => {
+        this.notifications.success(`${numberOfJobs} Jobs cloned`, {
+          autoClear: true,
+        });
+
+        later(this, () => this.refresh(), 300);
+      });
+    }
   }
 });
