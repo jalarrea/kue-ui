@@ -2,18 +2,17 @@ import { Promise } from 'rsvp';
 import { on } from '@ember/object/evented';
 import { inject as service } from '@ember/service';
 import Controller, { inject as controller } from '@ember/controller';
-import debug from 'debug';
+import debugLogger from 'ember-debug-logger';
 import _ from 'lodash';
 
 import ENV from '../config/environment';
-
-const log = debug('demo-namespace');
 
 export default Controller.extend({
     indexController: controller('jobs/index'),
 
     jobId: '',
     jobs: service(),
+    debug: debugLogger(),
     notifications: service('notification-messages'),
 
     initStatsRefresh: on('init', function() {
@@ -27,9 +26,10 @@ export default Controller.extend({
 
     updateStats() {
         var self = this;
+        this.debug('Hello, world');
         this.jobs.stats().then(function(data) {
             self.set('stats', data);
-            log('Hello, world');
+            
             return self.getCountBreakdowns();
         })
         .then(function(res) {

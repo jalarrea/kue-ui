@@ -52,6 +52,7 @@
     "ember-source": "~3.2.0",
     "ember-transition-helper": "^1.0.0",
     "emberx-select": "2.0.2",
+    "ember-debug-logger": "^2.1.1",
     "eslint-plugin-ember": "^5.0.0",
     "highcharts": "^5.0.7",
     "loader.js": "^4.2.3",
