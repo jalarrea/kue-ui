@@ -2,9 +2,12 @@ import { Promise } from 'rsvp';
 import { on } from '@ember/object/evented';
 import { inject as service } from '@ember/service';
 import Controller, { inject as controller } from '@ember/controller';
+import debug from 'debug';
 import _ from 'lodash';
 
 import ENV from '../config/environment';
+
+const log = debug('demo-namespace');
 
 export default Controller.extend({
     indexController: controller('jobs/index'),
@@ -26,6 +29,7 @@ export default Controller.extend({
         var self = this;
         this.jobs.stats().then(function(data) {
             self.set('stats', data);
+            log('Hello, world');
             return self.getCountBreakdowns();
         })
         .then(function(res) {
